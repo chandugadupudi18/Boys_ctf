@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Showcase</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Arial',sans-serif;
+      background:linear-gradient(135deg,#1a0000 0%,#4a0000 50%,#1a0000 100%);
+      min-height:100vh;color:#fff;}
+    nav{background:#000;padding:20px 0;position:sticky;top:0;z-index:100;}
+    nav ul{list-style:none;display:flex;justify-content:center;gap:40px;}
+    nav a{color:#fff;text-decoration:none;font-size:16px;font-weight:500;}
+    nav a:hover{color:#ff4444;}
+    .container{max-width:1400px;margin:0 auto;padding:60px 20px;}
+    .movies-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+    .movie-card{background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;width:320px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:all 0.3s ease;cursor:pointer;}
+    .movie-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(255,68,68,0.4);}
+    .movie-poster{width:100%;height:400px;border-radius:15px;overflow:hidden;position:relative;}
+    .movie-poster img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s ease;}
+    .movie-card:hover .movie-poster img{transform:scale(1.1);}
+    .movie-poster::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+      background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,0.7));opacity:0;transition:opacity 0.3s;}
+    .movie-card:hover .movie-poster::after{opacity:1;}
+    .movie-info{padding:20px 0 10px;}
+    .movie-title{color:#333;font-size:22px;font-weight:bold;text-align:center;margin-bottom:15px;}
+    .movie-actions{display:flex;justify-content:center;gap:15px;flex-direction:column;align-items:center;}
+    .action-btn{width:45px;height:45px;border-radius:50%;border:2px solid #333;background:#fff;
+      display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease;}
+    .action-btn:hover{background:#ff4444;border-color:#ff4444;transform:scale(1.1);}
+    .action-btn svg{width:20px;height:20px;fill:#333;transition:fill 0.3s;}
+    .action-btn:hover svg{fill:#fff;}
+
+    /* flag box inside card */
+    .flag-box{
+      margin-top:12px;padding:8px 12px;border:1px dashed #ff4444;border-radius:10px;
+      color:#111;background:rgba(255,255,255,0.9);font-size:14px;text-align:center;
+    }
+    .flag-box b{color:#cc0000;}
+    #Title{
+      font-family: 'Brush Script MT', cursive;
+      font-size: 48px;
+      color: #ff4444;
+      text-shadow: 2px 2px 4px #000;
+      margin-bottom: -45px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#Birthdays">Birthdays</a></li>
+      <li><a href="#Trips">Trips</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+<h1 id="Title" style="text-align: center">The,Boyzs!</h1>
+  <div class="container">
+    <div class="movies-grid">
+      <div class="movie-card">
+        <div class="movie-poster"><img src="img1.jpg" alt="Chakri's sister marriage"></div>
+        <div class="movie-info">
+          <h3 class="movie-title">Chakri's sister marriage</h3>
+          <div class="movie-actions">
+            <button class="action-btn heart-btn" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                C13.09 3.81 14.76 3 16.5 3
+                19.58 3 22 5.42 22 8.5
+                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+            <!-- flag will appear here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster"><img src="img2.jpg" alt="Chandu B'day"></div>
+        <div class="movie-info">
+          <h3 class="movie-title">Chandu B'day</h3>
+          <div class="movie-actions">
+            <button class="action-btn heart-btn" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                C13.09 3.81 14.76 3 16.5 3
+                19.58 3 22 5.42 22 8.5
+                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster"><img src="img3.jpg" alt="Sinti"></div>
+        <div class="movie-info">
+          <h3 class="movie-title">Sinti</h3>
+          <div class="movie-actions">
+            <button class="action-btn heart-btn" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                C13.09 3.81 14.76 3 16.5 3
+                19.58 3 22 5.42 22 8.5
+                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster"><img src="img4.jpg" alt="Tamilnadu"></div>
+        <div class="movie-info">
+          <h3 class="movie-title">Tamilnadu</h3>
+          <div class="movie-actions">
+            <button class="action-btn heart-btn" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                C13.09 3.81 14.76 3 16.5 3
+                19.58 3 22 5.42 22 8.5
+                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster"><img src="img5.jpg" alt="Kerala"></div>
+        <div class="movie-info">
+          <h3 class="movie-title">Kerala</h3>
+          <div class="movie-actions">
+            <button class="action-btn heart-btn" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                C13.09 3.81 14.76 3 16.5 3
+                19.58 3 22 5.42 22 8.5
+                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster"><img src="img6.jpg" alt="Kanya Kumari"></div>
+        <div class="movie-info">
+          <h3 class="movie-title">Kanya Kumari</h3>
+          <div class="movie-actions">
+            <button class="action-btn heart-btn" aria-label="Like">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                C13.09 3.81 14.76 3 16.5 3
+                19.58 3 22 5.42 22 8.5
+                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Flag parts for each card
+    const flagPieces = [
+      "r4g3_ch1n2_",
+      "ch4ndu2_",
+      "s41_h3mu",
+      "_gp_r0lu",
+      "_t1l4k",
+      "_su5h"
+    ];
+
+    const cards = document.querySelectorAll('.movies-grid .movie-card');
+
+    cards.forEach((card, idx) => {
+      const threshold = idx + 1; // 1st card needs 1 like, etc.
+      let likes = 0;
+      let unlocked = false;
+      const heartBtn = card.querySelector('.heart-btn');
+
+      heartBtn.addEventListener('click', () => {
+        if (unlocked) return; // prevent multiple unlocks
+        likes++;
+        if (likes >= threshold) {
+          unlocked = true;
+          heartBtn.style.background = '#ff4444';
+          heartBtn.style.borderColor = '#ff4444';
+          heartBtn.querySelector('svg').style.fill = '#fff';
+
+          // Flag inside the same card, below the like button
+          const flagBox = document.createElement('div');
+          flagBox.className = 'flag-box';
+          flagBox.innerHTML = `<b>Flag part:</b> ${flagPieces[idx]}`;
+          card.querySelector('.movie-actions').appendChild(flagBox);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
